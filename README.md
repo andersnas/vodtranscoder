@@ -4,15 +4,19 @@ This project holds some scripts that will help in achieving distributed VOD tran
 
 You need these pre requisites:
 
-1. A Linode object storage bucket with:
+1. A Linode account
+  - An Linode API key
+3. A Linode object storage bucket with:
   - A directory called intake
   - A directory called output
   - Applicable secrets to access it.
-2. A Linode machine (16GB Dedicated) with the following
+3. A Linode machine (16GB Dedicated) with the following
   - Mapped the Object storage bucket as /mnt/transcoding
   - Installed Terraform
   - Installed ffmpeg
   - A directory with the scripts in this repository
+
+Configure all settings in config.cfg file + add your Linode API key in the transcodernode.tf file.
 
 Flow:
 
