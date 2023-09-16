@@ -1,6 +1,6 @@
 # VOD transcoder
 
-This project holds some scripts that will help in achieving distributed VOD transcoding on Linode using Terraform. This is by no means meant for real production transcoding, but rather a way to test this concept and evaluate results. There is also a longer piece on this here: [https://www.linkedin.com/pulse/scaling-open-source-vod-transcoding-taming-swarm-bees-anders-n%2525C3%2525A4sman%3FtrackingId=Y%252F1g1Jd7SQartB%252BDSjpvYQ%253D%253D/?trackingId=Y%2F1g1Jd7SQartB%2BDSjpvYQ%3D%3D](https://www.linkedin.com/pulse/scaling-open-source-vod-transcoding-taming-swarm-bees-anders-n%C3%A4sman)
+This project holds some scripts that will help in achieving distributed VOD transcoding on Linode using Terraform. This is by no means meant for real production transcoding, but rather a way to test this concept and evaluate results. There is also a longer piece on this here: https://www.linkedin.com/pulse/scaling-open-source-vod-transcoding-taming-swarm-bees-anders-n%C3%A4sman
 
 You need these pre requisites:
 
