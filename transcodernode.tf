@@ -7,8 +7,13 @@ terraform {
   }
 }
 
+variable "linodeapikey" {
+  description = "Linode API token"
+  type        = string
+}
+
 provider "linode" {
-  token = "YOUR LINODE API TOKEN"
+  token = "e6ef33f18db59611a290437aa42d7f96f3b7a5418ebcc31dd346e99706f5427b"
 }
 
 variable "videofile" {

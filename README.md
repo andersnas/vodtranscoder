@@ -16,7 +16,7 @@ You need these pre requisites:
   - Installed ffmpeg
   - A directory with the scripts in this repository
 
-Configure all settings in config.cfg file + add your Linode API key in the transcodernode.tf file.
+Configure all settings in config.cfg file.
 
 Flow:
 

@@ -39,8 +39,8 @@ log_message "Splitting file"
 
 log_message "Deploying transcoders"
 terraform init
-terraform plan -var="logfile=$LOG_FILE" -var="rootpassword=$ROOT_PASSWORD" -var="storagebaseurl=$STORAGE_BASE_URL" -var="objectkeys=$OBJECT_KEYS" -var="random=$random" -var="videofile=${FILENAME_NOEXT}_segment" -var="machinetype=$MACHINE_TYPE" -var="machinecount=$NUMBER_OF_MACHINES" -var="region=$REGION" -var="public_key=$PUBLIC_KEY"
-terraform apply -var="logfile=$LOG_FILE" -var="rootpassword=$ROOT_PASSWORD" -var="storagebaseurl=$STORAGE_BASE_URL" -var="objectkeys=$OBJECT_KEYS" -var="random=$random" -var="videofile=${FILENAME_NOEXT}_segment" -var="machinetype=$MACHINE_TYPE" -var="machinecount=$NUMBER_OF_MACHINES" -var="region=$REGION" -var="public_key=$PUBLIC_KEY" -auto-approve
+terraform plan -var="logfile=$LOG_FILE" -var="linodeapikey=$LINODE_API_TOKEN" -var="rootpassword=$ROOT_PASSWORD" -var="rootpassword=$ROOT_PASSWORD" -var="storagebaseurl=$STORAGE_BASE_URL" -var="objectkeys=$OBJECT_KEYS" -var="random=$random" -var="videofile=${FILENAME_NOEXT}_segment" -var="machinetype=$MACHINE_TYPE" -var="machinecount=$NUMBER_OF_MACHINES" -var="region=$REGION" -var="public_key=$PUBLIC_KEY"
+terraform apply -var="logfile=$LOG_FILE" -var="linodeapikey=$LINODE_API_TOKEN" -var="rootpassword=$ROOT_PASSWORD" -var="storagebaseurl=$STORAGE_BASE_URL" -var="objectkeys=$OBJECT_KEYS" -var="random=$random" -var="videofile=${FILENAME_NOEXT}_segment" -var="machinetype=$MACHINE_TYPE" -var="machinecount=$NUMBER_OF_MACHINES" -var="region=$REGION" -var="public_key=$PUBLIC_KEY" -auto-approve
 
 log_message "Merge segments"
 ./ffmerge.sh "$BASENAME" "${DIRNAME}/$random" "$OUTPUT_FOLDER"
@@ -54,7 +54,7 @@ rm "${DIRNAME}/$random/"*
 rmdir "${DIRNAME}/$random"
 
 log_message "Decomissioning transcoders"
-terraform plan -destroy -var="logfile=$LOG_FILE" -var="rootpassword=$ROOT_PASSWORD" -var="storagebaseurl=$STORAGE_BASE_URL" -var="objectkeys=$OBJECT_KEYS" -var="random=$random" -var="videofile=${FILENAME_NOEXT}_segment" -var="machinetype=$MACHINE_TYPE" -var="machinecount=$NUMBER_OF_MACHINES" -var="region=$REGION" -var="public_key=$PUBLIC_KEY"
-terraform destroy -var="logfile=$LOG_FILE" -var="rootpassword=$ROOT_PASSWORD" -var="storagebaseurl=$STORAGE_BASE_URL" -var="objectkeys=$OBJECT_KEYS" -var="random=$random" -var="videofile=${FILENAME_NOEXT}_segment" -var="machinetype=$MACHINE_TYPE" -var="machinecount=$NUMBER_OF_MACHINES" -var="region=$REGION" -var="public_key=$PUBLIC_KEY" -auto-approve
+terraform plan -destroy -var="logfile=$LOG_FILE" -var="linodeapikey=$LINODE_API_TOKEN" -var="rootpassword=$ROOT_PASSWORD" -var="storagebaseurl=$STORAGE_BASE_URL" -var="objectkeys=$OBJECT_KEYS" -var="random=$random" -var="videofile=${FILENAME_NOEXT}_segment" -var="machinetype=$MACHINE_TYPE" -var="machinecount=$NUMBER_OF_MACHINES" -var="region=$REGION" -var="public_key=$PUBLIC_KEY"
+terraform destroy -var="logfile=$LOG_FILE" -var="linodeapikey=$LINODE_API_TOKEN" -var="rootpassword=$ROOT_PASSWORD" -var="storagebaseurl=$STORAGE_BASE_URL" -var="objectkeys=$OBJECT_KEYS" -var="random=$random" -var="videofile=${FILENAME_NOEXT}_segment" -var="machinetype=$MACHINE_TYPE" -var="machinecount=$NUMBER_OF_MACHINES" -var="region=$REGION" -var="public_key=$PUBLIC_KEY" -auto-approve
 
 log_message "Done"
