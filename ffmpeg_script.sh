@@ -16,8 +16,6 @@ process_file() {
     # Execute the command
     bash -c "$command_to_run"
     echo "Executed command: $command_to_run"
-
-
 }
 
 echo "Script looking for file ${STORAGE_PATH}/${TARGET_FILE}"
