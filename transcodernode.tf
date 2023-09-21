@@ -13,7 +13,7 @@ variable "linodeapikey" {
 }
 
 provider "linode" {
-  token = "xxxxxxxxxxxxxxxx"
+  token = var.linodeapikey
 }
 
 variable "videofile" {
