@@ -103,6 +103,7 @@ resource "linode_instance" "ffmpeg_instance" {
       "sudo chmod 600 ~/.passwd-s3fs",
       "echo 'transcoding /mnt/transcoding fuse.s3fs _netdev,allow_other,use_path_request_style,nonempty,url=${var.storagebaseurl} 0 0' | sudo tee -a /etc/fstab",
       "sudo mount -a",
+      "echo '$(date +'%Y-%m-%d %H:%M:%S') : mounted' > '${var.logfile}'",
       "apt-get install -y ffmpeg",
       "echo Hello > /mnt/transcoding/output/logfile.log",
       "/tmp/ffmpeg_script.sh /mnt/transcoding/intake/${var.random} ${var.videofile}_${count.index + 1}.txt",
